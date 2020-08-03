@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Routing from './Routing';
 
-function App() {
+export const App: React.FC = () => {
   return (
     <div className="App">
       <header className="App-header">
