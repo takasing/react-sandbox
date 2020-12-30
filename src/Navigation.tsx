@@ -1,0 +1,25 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import styles from './Navigation.module.css';
+
+const Navigation: React.FC = () => {
+  const link = {
+    color: 'white',
+  }
+  return (
+    <nav>
+      <ul className={styles.list}>
+        <li className={styles.itemItem}>
+          <Link to="/about" style={link}>About</Link>
+        </li>
+        <li className={styles.item}>
+          <Link to="/users" style={link}>Users</Link>
+        </li>
+        <li className={styles.item}>
+          <Link to="/typescripts"  style={link}>Typescripts</Link>
+        </li>
+      </ul>
+    </nav>
+  )
+}
+export default Navigation;
