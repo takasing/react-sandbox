@@ -5,7 +5,8 @@ import {
   Route,
 } from "react-router-dom";
 import Navigation from './Navigation';
-import { Typescripts } from './typescripts/Typescripts';
+import { Typescripts } from './pages/Typescripts';
+import Reactive from './pages/Reactive';
 
 const About = () => {
   return <h2>About</h2>;
@@ -27,6 +28,7 @@ const Routing: React.FC = () => {
           <Route path="/about"><About /></Route>
           <Route path="/users"><Users /></Route>
           <Route path="/typescripts"><Typescripts/></Route>
+          <Route path="/rx"><Reactive /></Route>
         </Switch>
       </div>
     </Router>

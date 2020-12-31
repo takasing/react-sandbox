@@ -18,6 +18,9 @@ const Navigation: React.FC = () => {
         <li className={styles.item}>
           <Link to="/typescripts"  style={link}>Typescripts</Link>
         </li>
+        <li className={styles.item}>
+          <Link to="/rx"  style={link}>Rx Programming</Link>
+        </li>
       </ul>
     </nav>
   )
