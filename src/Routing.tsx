@@ -7,6 +7,7 @@ import {
 import Navigation from './Navigation';
 import { Typescripts } from './pages/Typescripts';
 import Reactive from './pages/Reactive';
+import UseRef from './pages/UseRef';
 
 const About = () => {
   return <h2>About</h2>;
@@ -29,6 +30,7 @@ const Routing: React.FC = () => {
           <Route path="/users"><Users /></Route>
           <Route path="/typescripts"><Typescripts/></Route>
           <Route path="/rx"><Reactive /></Route>
+          <Route path="/useRef"><UseRef /></Route>
         </Switch>
       </div>
     </Router>

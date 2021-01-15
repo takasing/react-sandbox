@@ -1,4 +1,4 @@
-import { fromEvent, interval, Observable, merge } from 'rxjs';
+import { fromEvent, Observable, merge } from 'rxjs';
 import { mapTo, map, scan, tap, filter, delay, bufferTime, distinctUntilChanged, pluck, startWith } from 'rxjs/operators';
 
 // Observableは値が変わりうる変数

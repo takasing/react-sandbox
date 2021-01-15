@@ -21,6 +21,9 @@ const Navigation: React.FC = () => {
         <li className={styles.item}>
           <Link to="/rx"  style={link}>Rx Programming</Link>
         </li>
+        <li className={styles.item}>
+          <Link to="/useRef"  style={link}>useRef</Link>
+        </li>
       </ul>
     </nav>
   )
