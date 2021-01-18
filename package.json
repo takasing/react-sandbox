@@ -3,14 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "@types/jest": "^26.0.8",
-    "@types/node": "^14.0.27",
-    "@types/react": "^16.9.44",
-    "@types/react-dom": "^16.9.8",
     "mobx": "^6.0.4",
+    "mobx-react": "^7.0.5",
     "mobx-state-tree": "^5.0.0",
     "node-fetch": "^2.6.1",
     "react": "^16.13.1",
@@ -43,7 +37,14 @@
     ]
   },
   "devDependencies": {
+    "@types/react": "^16.14.2",
     "@types/react-router-dom": "^5.1.5",
+    "@types/jest": "^26.0.8",
+    "@types/node": "^14.0.27",
+    "@types/react-dom": "^16.9.8",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
     "typescript-plugin-css-modules": "^3.0.1"
   }
 }

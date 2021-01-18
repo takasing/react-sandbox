@@ -52,11 +52,18 @@ it("can add item", () => {
     // 状態遷移を保存しておく
     states.push(snapshot);
   });
-  // createしなくてもmobxがやってくれるっぽい
-  list.add({
-    name: "Chesterton",
+  list.add(WishListItem.create({
+    name: 'Chesterton',
     price: 10,
-  });
+  }));
+
+  // createしなくてもmobxがやってくれるっぽい
+  // と思ってたけど、optionalとか対応できてないのでやっぱだめ
+  // list.add({
+  //   name: "Chesterton",
+  //   price: 10,
+  // });
+
   // console.log('add'); // 1回目のonSnapshotの後に実行されている => 1度目のsnapshot作成
   expect(list.items.length).toBe(1);
   expect(list.items[0].name).toBe("Chesterton");
@@ -81,10 +88,10 @@ it("can add item checking by patching", () => {
   });
 
   // op: 'add'
-  list.add({
-    name: "Chesterton",
+  list.add(WishListItem.create({
+    name: 'Chesterton',
     price: 10,
-  });
+  }));
   // op: 'replace'
   list.items[0].changeName("Chesterton jr.");
 
