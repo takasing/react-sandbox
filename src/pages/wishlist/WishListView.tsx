@@ -2,7 +2,7 @@ import { observer } from 'mobx-react';
 import React from 'react';
 import { TWishList } from '../../models/WishList';
 import WishListItemView from './WishListItemView';
-import styles from './WishListItemView.module.css';
+import styles from './WishList.module.css';
 
 interface Props {
   wishList: TWishList,

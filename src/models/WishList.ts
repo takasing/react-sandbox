@@ -16,6 +16,9 @@ export const WishListItem = types.model({
   },
   changePrice(newPrice: number) {
     self.price = newPrice;
+  },
+  changeImage(newImage: string) {
+    self.image = newImage;
   }
 }))
 export type TWishListItem = Instance<typeof WishListItem>;

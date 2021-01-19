@@ -1,3 +1,7 @@
+.list {
+  max-width: 500px;
+  margin: auto;
+}
 .item {
   border-left: 5px solid #964747;
   margin-bottom: 10px;
@@ -22,4 +26,19 @@
 
 .item button {
   margin-left: 8px;
+}
+.itemEdit {
+}
+
+.itemEdit input {
+  width: 330px;
+  margin: 0 0 6px 10px;
+  padding: 5px 4px;
+  border: 1px solid #ccc;
+  background-color: white;
+  color: #964747;
+}
+
+.itemEdit input:focus {
+  border-color: #964747;
 }

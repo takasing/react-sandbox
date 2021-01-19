@@ -21,7 +21,9 @@ const Mobx: React.FC = () => {
   });
   setInterval(() => {
     wishList.items[0].changePrice(wishList.items[0].price + 1);
-  }, 1000);
+    // 下でeditしてもここは変わらない
+    // console.log('wishList', wishList.items[0].name);
+  }, 10000);
   return (
     <section>
       <WishListView wishList={wishList}></WishListView>
