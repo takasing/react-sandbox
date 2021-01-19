@@ -22,7 +22,7 @@ const WishListItemEdit: React.FC<Props> = ({item}: Props) => {
     <div className={styles.itemEdit}>
       Thing: <input value={item.name} onChange={onChangeName} />
       <br/>
-      Price: <input value={item.price} onChange={onChangePrice} />
+      Price: <input value={item.price} onChange={onChangePrice} type="number" step="0.01" />
       <br/>
       Image: <input value={item.image} onChange={onChangeImage} />
       <br/>

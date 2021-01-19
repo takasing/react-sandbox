@@ -1,4 +1,4 @@
-import { Instance, types } from 'mobx-state-tree';
+import { destroy, getParent, Instance, types } from 'mobx-state-tree';
 
 // types.modelで吐き出した型と合わなくなるのでこれだとだめ
 // export type TWishListItem = {
@@ -19,6 +19,12 @@ export const WishListItem = types.model({
   },
   changeImage(newImage: string) {
     self.image = newImage;
+  },
+  remove() {
+    // remove存在しない？ => generics!
+    // これは2つ上のオブジェクトのメソッドを実行する
+    // WishListItem => items => WishListで2
+    getParent<TWishList>(self, 2).remove(self as TWishListItem)
   }
 }))
 export type TWishListItem = Instance<typeof WishListItem>;
@@ -33,6 +39,10 @@ export const WishList = types.model({
 .actions(self => ({
   add(item: TWishListItem) {
     self.items.push(item);
+  },
+  remove(item: TWishListItem) {
+    // self.items.splice(self.items.indexOf(item), 1);
+    destroy(item);
   }
 }))
 .views(self => ({

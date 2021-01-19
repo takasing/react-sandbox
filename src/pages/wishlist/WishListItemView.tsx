@@ -65,6 +65,7 @@ const WishListItemView = ({ item }: Props) => {
       <span>{item.price}</span>
       <span>
         <button onClick={onToggleEdit}>✏</button>
+        <button onClick={item.remove}>⌫</button>
       </span>
     </li>
   );
