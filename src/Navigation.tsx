@@ -25,7 +25,10 @@ const Navigation: React.FC = () => {
           <Link to="/useRef"  style={link}>useRef</Link>
         </li>
         <li className={styles.item}>
-          <Link to="/mobx"  style={link}>Mobx</Link>
+          <Link to="/wishlist"  style={link}>Mobx:WL</Link>
+        </li>
+        <li className={styles.item}>
+          <Link to="/groups"  style={link}>Mobx:GR</Link>
         </li>
       </ul>
     </nav>

@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`can create User 1`] = `
+Object {
+  "gender": "m",
+  "id": "a342",
+  "name": "Home alone",
+  "wishList": Object {
+    "items": Array [],
+  },
+}
+`;
+
+exports[`can create User 2`] = `
+Array [
+  Object {
+    "gender": "m",
+    "id": "a342",
+    "name": "Home alone",
+    "wishList": Object {
+      "items": Array [],
+    },
+  },
+]
+`;
