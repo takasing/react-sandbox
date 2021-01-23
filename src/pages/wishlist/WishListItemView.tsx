@@ -7,12 +7,14 @@ import { applySnapshot, clone, getSnapshot } from "mobx-state-tree";
 
 interface Props {
   item: TWishListItem;
+  // trueの場合は編集するボタンを隠す
+  readonly: boolean;
 }
 type Editing = {
   isEditing: boolean,
   clone: TWishListItem | null
 }
-const WishListItemView = ({ item }: Props) => {
+const WishListItemView = ({ item, readonly }: Props) => {
   const [state, setState] = useState<Editing>({
     isEditing: false,
     clone: null,
@@ -63,10 +65,12 @@ const WishListItemView = ({ item }: Props) => {
       {item.image && <img alt={item.name} src={item.image} />}
       <h3>{item.name}</h3>
       <span>{item.price}</span>
-      <span>
-        <button onClick={onToggleEdit}>✏</button>
-        <button onClick={item.remove}>⌫</button>
-      </span>
+      {!readonly && (
+        <span>
+          <button onClick={onToggleEdit}>✏</button>
+          <button onClick={item.remove}>⌫</button>
+        </span>
+      )}
     </li>
   );
 };

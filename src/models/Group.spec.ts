@@ -19,4 +19,16 @@ it('can create User', () => {
   expect(user.name).toBe('Home alone');
   expect(getSnapshot(user)).toMatchSnapshot();
   expect(states).toMatchSnapshot();
+
+  // Cannot modify 'User@<root>(id: a342)', the object is protected and can only be modified by using an action
+  // user.recipient = User.create({
+  //   id: 'a343',
+  //   name: 'Hoder',
+  //   gender: 'f',
+  // });
+  // expect(states.length).toBe(2);
+  // expect(user.recipient.name).toBe('Hoder');
+  // expect(getSnapshot(user)).toMatchSnapshot();
+  // expect(states).toMatchSnapshot();
 })
+

@@ -7,14 +7,15 @@ import WishListItemEntry from './WishListItemEntry';
 
 interface Props {
   wishList: TWishList,
+  readonly?: boolean,
 }
-const WishListView = ({wishList}: Props) => (
+const WishListView = ({wishList, readonly}: Props) => (
   <div className={styles.list}>
     <ul className={styles.listWrapper}>{wishList.items.map((item, i) => (
-      <WishListItemView key={i} item={item} />
+      <WishListItemView key={i} item={item} readonly={readonly||false} />
     ))}</ul>
     Total: {wishList.totalPrice} €
-    <WishListItemEntry wishList={wishList} />
+    {!readonly && <WishListItemEntry wishList={wishList} />}
   </div>
 )
 

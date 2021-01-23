@@ -1,6 +1,7 @@
+import { observer } from "mobx-react";
 import { onSnapshot } from "mobx-state-tree";
 import React, { useState } from "react";
-import { Group } from '../models/Group';
+import { Group, TUser } from '../models/Group';
 import WishListView from "./wishlist/WishListView";
 
 const initialState = {
@@ -67,10 +68,23 @@ const MobxGroups: React.FC = () => {
           <option key={u.id} value={u.id}>{u.name}</option>
         ))}
       </select>
-      {selectedUser && <WishListView wishList={selectedUser.wishList} />}
-      {selectedUser && <button onClick={selectedUser.getSuggestions}>Suggestions</button>}
+      <button onClick={group.drawLots}>Draw lots</button>
+      {selectedUser && <User user={selectedUser} />}
     </section>
   );
 };
+
+interface UserProps {
+  user: TUser,
+}
+const User: React.FC<UserProps> = observer(({user}: UserProps) => (
+  <div>
+    <WishListView wishList={user.wishList} />
+    <button onClick={user.getSuggestions}>Suggestions</button>
+    <hr></hr>
+    <h2>{user.recipient ? user.recipient.name : '' }</h2>
+    {user.recipient && <WishListView wishList={user.recipient.wishList} readonly />}
+  </div>
+))
 
 export default MobxGroups;

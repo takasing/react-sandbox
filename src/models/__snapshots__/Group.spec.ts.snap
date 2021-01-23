@@ -5,6 +5,7 @@ Object {
   "gender": "m",
   "id": "a342",
   "name": "Home alone",
+  "recipient": undefined,
   "wishList": Object {
     "items": Array [],
   },
@@ -17,6 +18,7 @@ Array [
     "gender": "m",
     "id": "a342",
     "name": "Home alone",
+    "recipient": undefined,
     "wishList": Object {
       "items": Array [],
     },
