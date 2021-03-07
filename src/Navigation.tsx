@@ -30,6 +30,12 @@ const Navigation: React.FC = () => {
         <li className={styles.item}>
           <Link to="/groups"  style={link}>Mobx:GR</Link>
         </li>
+        <li className={styles.item}>
+          <Link to="/hooks"  style={link}>Hooks</Link>
+        </li>
+        <li className={styles.item}>
+          <Link to="/react-hooks-and-suspense/counter"  style={link}>RHS</Link>
+        </li>
       </ul>
     </nav>
   )
