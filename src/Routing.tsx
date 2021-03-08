@@ -12,6 +12,7 @@ import MobxWishList from './pages/MobxWishList';
 import MobxGroups from './pages/MobxGroups';
 import { Hooks } from './pages/ReactHooks';
 import { Counter } from './pages/react-hooks-suspense/Counter';
+import ReactHooksSuspense from './pages/react-hooks-suspense';
 
 const About = () => {
   return <h2>About</h2>;
@@ -38,7 +39,7 @@ const Routing: React.FC = () => {
           <Route path="/wishList"><MobxWishList /></Route>
           <Route path="/groups"><MobxGroups /></Route>
           <Route path="/hooks"><Hooks /></Route>
-          <Route path="/react-hooks-and-suspense/counter"><Counter /></Route>
+          <Route path="/react-hooks-and-suspense"><ReactHooksSuspense /></Route>
         </Switch>
       </div>
     </Router>
