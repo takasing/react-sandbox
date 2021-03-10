@@ -5,6 +5,7 @@ import { listStyle, itemStyle } from '../../Navigation';
 import Tilt from "./Tilt";
 import { css } from "@emotion/css";
 import { Stopwatch } from "./Stopwatch";
+import ActivityDetector from "./ActivityDetector";
 
 const tiltStyle = css`
   width: 100%;
@@ -25,6 +26,7 @@ const ReactHooksSuspense = () => {
         <li className={itemStyle}><Link to={`${url}/counter`} style={link}>Counter</Link></li>
         <li className={itemStyle}><Link to={`${url}/tilt`} style={link}>Tilt</Link></li>
         <li className={itemStyle}><Link to={`${url}/stopwatch`} style={link}>Stopwatch</Link></li>
+        <li className={itemStyle}><Link to={`${url}/activityDetector`} style={link}>ActivityDetector</Link></li>
       </ul>
       <Switch>
         <Route exact path={path}>
@@ -37,6 +39,7 @@ const ReactHooksSuspense = () => {
           </Tilt>
         </Route>
         <Route path={`${path}/stopwatch`}><Stopwatch /></Route>
+        <Route path={`${path}/activityDetector`}><ActivityDetector /></Route>
       </Switch>
     </div>
   )
