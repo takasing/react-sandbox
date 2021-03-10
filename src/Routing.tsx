@@ -11,7 +11,6 @@ import UseRef from './pages/UseRef';
 import MobxWishList from './pages/MobxWishList';
 import MobxGroups from './pages/MobxGroups';
 import { Hooks } from './pages/ReactHooks';
-import { Counter } from './pages/react-hooks-suspense/Counter';
 import ReactHooksSuspense from './pages/react-hooks-suspense';
 
 const About = () => {

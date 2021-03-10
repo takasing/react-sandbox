@@ -1,9 +1,49 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useReducer } from 'react';
 import { css } from '@emotion/css';
 
+type State = {
+  lapse: number,
+  running: boolean
+}
+type ActionLapse = {
+  type: 'LAPSE'
+  now: number,
+  startTime: number,
+}
+type ActionToggleRunning = {
+  type: 'TOGGLE_RUNNING'
+}
+type ActionClear = {
+  type: 'CLEAR'
+}
+type Actions = ActionLapse | ActionToggleRunning | ActionClear
+const reducer = (state: State, action: Actions) => {
+  switch (action.type) {
+    case 'LAPSE':
+      return {
+        ...state,
+        lapse: action.now - action.startTime,
+      }
+    case 'TOGGLE_RUNNING':
+      return {
+        ...state,
+        running: !state.running
+      }
+    case 'CLEAR':
+      return {
+        lapse: 0,
+        running: false
+      }
+    default:
+      return state;
+  }
+}
+
 export const Stopwatch: React.FC = () => {
-  const [lapse, setLapse] = useState(0)
-  const [running, setRunning] = useState(false)
+  const [{lapse, running}, dispatch] = useReducer(reducer, {
+    lapse: 0,
+    running: false
+  });
   const intervalRef = useRef<NodeJS.Timeout|undefined>();
 
   const clearCurrentInterval = () => {
@@ -20,16 +60,15 @@ export const Stopwatch: React.FC = () => {
     } else {
       const startTime = Date.now() - lapse;
       intervalRef.current = setInterval(() => {
-        setLapse(Date.now() - startTime);
+        dispatch({type: 'LAPSE', now: Date.now(), startTime: startTime })
       }, 0)
     }
-    setRunning(!running)
+    dispatch({type: 'TOGGLE_RUNNING'})
   }
 
   const handleClearClick = () => {
     clearCurrentInterval()
-    setLapse(0)
-    setRunning(false);
+    dispatch({type: 'CLEAR'})
   }
 
   return (

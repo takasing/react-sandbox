@@ -1,5 +1,5 @@
 import { css } from '@emotion/css';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import VanillaTilt from 'vanilla-tilt';
 
 const rootStyle = css`
