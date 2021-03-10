@@ -9,7 +9,7 @@ const reducer = (currentState: State, newState: Partial<State>) => {
   return {...currentState, ...newState}
 }
 
-export const Stopwatch: React.FC = () => {
+const useStopwatch = () => {
   const [{lapse, running}, setState] = useReducer(reducer, {
     lapse: 0,
     running: false
@@ -40,6 +40,14 @@ export const Stopwatch: React.FC = () => {
     clearCurrentInterval()
     setState({lapse: 0, running: false})
   }
+  return {
+    lapse, running, handleRunClick, handleClearClick
+  }
+}
+
+export const Stopwatch: React.FC = () => {
+  const sw1 = useStopwatch();
+  const sw2 = useStopwatch();
 
   return (
     <div className={css`
@@ -47,18 +55,35 @@ export const Stopwatch: React.FC = () => {
       justify-content: center;
       flex-direction: column;
     `}>
-      <label>{lapse}</label>
+      <label>{sw1.lapse}ms</label>
       <div className={css`
         display: flex;
         justify-content: center;
         margin-top: 20px;
       `}>
-        <button onClick={handleRunClick}>
+        <button onClick={sw1.handleRunClick}>
           {/* intervalRef.currentはclearIntervalしてもundefinedにならない */}
           {/* {running ? 'Stop' : intervalRef.current ? 'Restart' : 'Start'} */}
-          {running ? 'Stop' : 'Start'}
+          {sw1.running ? 'Stop' : 'Start'}
         </button>
-        <button onClick={handleClearClick}>Clear</button>
+        <button onClick={sw1.handleClearClick}>Clear</button>
+      </div>
+      <hr/>
+      <strong>Lapse Diff</strong>
+      <span>{sw1.lapse - sw2.lapse}ms</span>
+      <hr/>
+      <label>{sw2.lapse}ms</label>
+      <div className={css`
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      `}>
+        <button onClick={sw2.handleRunClick}>
+          {/* intervalRef.currentはclearIntervalしてもundefinedにならない */}
+          {/* {running ? 'Stop' : intervalRef.current ? 'Restart' : 'Start'} */}
+          {sw2.running ? 'Stop' : 'Start'}
+        </button>
+        <button onClick={sw2.handleClearClick}>Clear</button>
       </div>
     </div>
   )
