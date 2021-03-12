@@ -3,7 +3,7 @@ import React, { Dispatch, SetStateAction, useState } from "react";
 // type UpperProps = {
 //   content: string
 // }
-// React.memoでComponentを再利用する
+// React.memoでComponentを再利用すると、変更のないインスタンスは再描画されない
 // const Upper: React.FC<UpperProps> = React.memo(({content}: UpperProps) => {
 const Upper: React.FC = React.memo(({children}) => {
   const [count, setCount] = useState(0);
