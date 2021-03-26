@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, Route, Switch, useRouteMatch } from "react-router-dom";
 import { Counter } from "./Counter";
-import { listStyle, itemStyle } from '../../Navigation';
+import { listStyle, itemStyle, linkStyle } from '../../Navigation';
 // import Tilt from "./Tilt";
 // import { css } from "@emotion/css";
 import { Stopwatch } from "./Stopwatch";
@@ -20,19 +20,16 @@ import { Artists } from "./Artists";
 
 const ReactHooksSuspense = () => {
   const { path, url } = useRouteMatch();
-  const link = {
-    color: 'white',
-  }
   return (
     <div>
       <ul className={listStyle}>
-        <li className={itemStyle}><Link to={`${url}/counter`} style={link}>Counter</Link></li>
-        {/* <li className={itemStyle}><Link to={`${url}/tilt`} style={link}>Tilt</Link></li> */}
-        <li className={itemStyle}><Link to={`${url}/stopwatch`} style={link}>Stopwatch</Link></li>
-        <li className={itemStyle}><Link to={`${url}/activityDetector`} style={link}>ActivityDetector</Link></li>
-        <li className={itemStyle}><Link to={`${url}/memo`} style={link}>Memo</Link></li>
-        <li className={itemStyle}><Link to={`${url}/lazy`} style={link}>Lazy</Link></li>
-        <li className={itemStyle}><Link to={`${url}/artists`} style={link}>Artists</Link></li>
+        <li className={itemStyle}><Link to={`${url}/counter`} style={linkStyle}>Counter</Link></li>
+        {/* <li className={itemStyle}><Link to={`${url}/tilt`} style={linkStyle}>Tilt</Link></li> */}
+        <li className={itemStyle}><Link to={`${url}/stopwatch`} style={linkStyle}>Stopwatch</Link></li>
+        <li className={itemStyle}><Link to={`${url}/activityDetector`} style={linkStyle}>ActivityDetector</Link></li>
+        <li className={itemStyle}><Link to={`${url}/memo`} style={linkStyle}>Memo</Link></li>
+        <li className={itemStyle}><Link to={`${url}/lazy`} style={linkStyle}>Lazy</Link></li>
+        <li className={itemStyle}><Link to={`${url}/artists`} style={linkStyle}>Artists</Link></li>
       </ul>
       <Switch>
         <Route exact path={path}>

@@ -12,40 +12,43 @@ export const listStyle = css`
 export const itemStyle = css`
   padding: 8px;
 `
+export const linkStyle = {
+  color: 'white',
+}
 
 const Navigation: React.FC = () => {
-  const link = {
-    color: 'white',
-  }
   return (
     <nav>
       <ul className={listStyle}>
         <li className={itemStyle}>
-          <Link to="/about" style={link}>About</Link>
+          <Link to="/about" style={linkStyle}>About</Link>
         </li>
         <li className={itemStyle}>
-          <Link to="/users" style={link}>Users</Link>
+          <Link to="/users" style={linkStyle}>Users</Link>
         </li>
         <li className={itemStyle}>
-          <Link to="/typescripts"  style={link}>Typescripts</Link>
+          <Link to="/typescripts"  style={linkStyle}>Typescripts</Link>
         </li>
         <li className={itemStyle}>
-          <Link to="/rx"  style={link}>Rx Programming</Link>
+          <Link to="/rx"  style={linkStyle}>Rx Programming</Link>
         </li>
         <li className={itemStyle}>
-          <Link to="/useRef"  style={link}>useRef</Link>
+          <Link to="/useRef"  style={linkStyle}>useRef</Link>
         </li>
         <li className={itemStyle}>
-          <Link to="/wishlist"  style={link}>Mobx:WL</Link>
+          <Link to="/wishlist"  style={linkStyle}>Mobx:WL</Link>
         </li>
         <li className={itemStyle}>
-          <Link to="/groups"  style={link}>Mobx:GR</Link>
+          <Link to="/groups"  style={linkStyle}>Mobx:GR</Link>
         </li>
         <li className={itemStyle}>
-          <Link to="/hooks"  style={link}>Hooks</Link>
+          <Link to="/hooks"  style={linkStyle}>Hooks</Link>
         </li>
         <li className={itemStyle}>
-          <Link to="/react-hooks-and-suspense"  style={link}>RHS</Link>
+          <Link to="/react-hooks-and-suspense"  style={linkStyle}>RHS</Link>
+        </li>
+        <li className={itemStyle}>
+          <Link to="/animations" style={linkStyle}>Animations</Link>
         </li>
       </ul>
     </nav>
